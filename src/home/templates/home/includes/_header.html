@@ -1,0 +1,24 @@
+{% load static wagtailcore_tags wagtailimages_tags menu_tags %}
+
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                {% if settings.dashboard.WebsiteSettings.logo %}
+                    {% image settings.dashboard.WebsiteSettings.logo height-70 as logo %}
+                    <img src="{{logo.url}}" alt="{{logo.alt}}">
+                {% else %}
+                    LOGO
+                {% endif %}
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMainMenu" aria-controls="navbarMainMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMainMenu">
+                {% main_menu %}
+            </div>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block body_class %}template-404{% endblock %}
+
+{% block extra_css %}
+<style>
+    main {
+        height: 100vh;
+    }
+    div {
+        position: relative;
+    }
+    h1 {
+        font-size: 8rem;
+        font-weight: 300;
+    }
+    span {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        background-color: #fff;
+        white-space: nowrap;
+        padding: 6px 10px;
+        font-size: 18px;
+    }
+    p {
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <main class="d-flex justify-content-center flex-column align-items-center">
+        <div>
+            <h1>500</h1>
+            <span>Internal server error</span>
+        </div>
+        <p>
+            Scusaci, qualcosa è andato storto. <br> In questo momento stiamo cercando di risolvere il problema.
+        </p>
+    </main>
+{% endblock %}
+

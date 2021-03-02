@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static wagtailimages_tags %}
+
+{% block extra_head %}{% endblock %}
+
+
+{% block content %}
+{% include 'home/includes/_header.html' %}
+
+<main>
+
+    {% block main %}{% endblock %}
+
+</main>
+
+{% include 'home/includes/_footer.html' %}
+{% endblock %}

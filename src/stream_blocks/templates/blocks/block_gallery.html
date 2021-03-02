@@ -1,0 +1,25 @@
+{% load wagtailimages_tags %}
+{# https://swiperjs.com/ #}
+
+<div class="block-gallery swiper-container swiper-container--single">
+    <div class="swiper-wrapper">
+        {% for slide in self.gallery %}
+            <div class="swiper-slide">
+                <picture>
+                    {% image slide.image original format-webp as image_original %}
+                    <source media="(min-width:1200px)" srcset="{{image_original.url}}">
+                    
+                    {% image slide.image width-992 format-webp as image_desktop %}
+                    <source media="(min-width:992px)" srcset="{{image_desktop.url}}">
+                    
+                    {% image slide.image width-768 format-webp as image_tablet %}
+                    <source media="(min-width:768px)" srcset="{{image_tablet.url}}">
+                    
+                    {% image slide.image width-576 format-webp as image_smartphone %}
+                    <img class="img-fluid" src="{{image_smartphone.url}}" alt="{{image_smartphone.alt}}">
+                </picture>
+                <!-- Aggiungi i campi necessari -->
+            </div>
+        {% endfor %}
+    </div>
+</div>

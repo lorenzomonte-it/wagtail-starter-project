@@ -1,0 +1,11 @@
+{% extends "wagtailadmin/admin_base.html" %}
+{% load static wagtailimages_tags %}
+
+{% block branding_favicon %}
+    {% if settings.dashboard.WebsiteSettings.favicon %}
+        {% image settings.dashboard.WebsiteSettings.favicon height-50 as favicon %}
+        <link rel="icon" href="{{favicon.url}}">
+    {% else %}
+        {{block.super}}
+    {% endif %}
+{% endblock %}

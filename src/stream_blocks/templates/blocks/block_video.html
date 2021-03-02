@@ -1,0 +1,14 @@
+{% load wagtailembeds_tags %}
+
+{% if self.embed_video %}
+    <div class="block-video embed-responsive embed-responsive-16by9">
+        {% embed self.embed_video.url %}
+    </div>
+
+{% else %}
+    <div class="block-video embed-responsive embed-responsive-16by9">
+        <video controls class="embed-responsive-item" preload="metadata">
+            <source src="{{self.video.url}}" type="video/mp4"/>
+        </video>
+    </div>
+{% endif %}

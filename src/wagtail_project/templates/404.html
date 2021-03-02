@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block body_class %}template-404{% endblock %}
+
+{% block extra_css %}
+<style>
+    main {
+        height: 100vh;
+    }
+    div {
+        position: relative;
+    }
+    h1 {
+        font-size: 8rem;
+        font-weight: 300;
+    }
+    span {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        background-color: #fff;
+        white-space: nowrap;
+        padding: 6px 10px;
+        font-size: 18px;
+    }
+    a {
+        text-transform: uppercase;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <main class="d-flex justify-content-center flex-column align-items-center">
+        <div>
+            <h1>OOPS!</h1>
+            <span>404 - La pagina che cerchi non esiste</span>
+        </div>
+        <a href="/" class="btn btn-primary mt-3">Torna alla homepage</a>
+    </main>
+{% endblock %}
