@@ -12,17 +12,19 @@ class HomePage(Page):
         return "Homepage"
 
 
-class FolderPage(Page):
-    show_in_menus_default = True
-    parent_page_types = ['home.HomePage', 'home.FolderPage']
+''' Pagina cartella '''
+# class FolderPage(Page):
+#     show_in_menus_default = True
+#     parent_page_types = ['home.HomePage', 'home.FolderPage']
 
-    class Meta:
-        verbose_name = 'Cartella'
+#     class Meta:
+#         verbose_name = 'Cartella'
 
 
-class SinglePage(Page):
-    show_in_menus_default = True
-    parent_page_types = ['home.HomePage', 'home.FolderPage']
+''' Pagina singola '''
+# class SinglePage(Page):
+#     show_in_menus_default = True
+#     parent_page_types = ['home.HomePage', 'home.FolderPage']
 
-    class Meta:
-        verbose_name = 'Pagina'
+#     class Meta:
+#         verbose_name = 'Pagina'
