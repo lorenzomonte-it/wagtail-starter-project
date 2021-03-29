@@ -3,6 +3,9 @@ import 'bootstrap/js/src/util'
 
 
 /* PACKAGES IMPORT */
+
+
+/* COMPONENTS IMPORT */
 import './components/carousel'
 
 

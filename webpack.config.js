@@ -4,7 +4,7 @@ const webpack = require("webpack");
 module.exports = {
   entry: {
     // Add here some files you want to be split from main.js
-    main: "./src/wagtail_project/static/scripts/main.js"
+    main: "./src/wagtail_project/static/scripts/main.js",
   },
   output: {
     path: path.resolve(__dirname, "./src/wagtail_project/static/js"),

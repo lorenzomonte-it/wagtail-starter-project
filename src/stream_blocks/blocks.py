@@ -14,10 +14,9 @@ class LinkValue(blocks.StructValue):
 
         if internal_page:
             return internal_page.url
-        elif external_link:
+        if external_link:
             return external_link
-        else:
-            return None
+        return '#'
 
 
 class TitleBlock(blocks.StructBlock):

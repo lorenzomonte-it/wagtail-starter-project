@@ -2,11 +2,12 @@
    Imports require
 ** ** ** ** ** */
 const { src, dest, task, watch, series, parallel } = require('gulp')
+const config = require('./gulp.config')
 const autoprefixer = require('gulp-autoprefixer')
 const cleanCss = require('gulp-clean-css')
 const sourcemaps = require('gulp-sourcemaps')
-const concat = require('gulp-concat');
 const sass = require('gulp-sass')
+var rename = require("gulp-rename");
 const browserSync = require('browser-sync')
 
 const server = browserSync.create();
@@ -17,7 +18,6 @@ const server = browserSync.create();
    Global variables
 ** ** ** ** ** */
 let root = 'src/'
-let source = root + 'wagtail_project/static/'
 
 let styleWatchFiles = root + '**/*.scss'
 let scriptWatchFiles = root + '**/main.min.js'
@@ -30,15 +30,16 @@ let htmlWatchFiles = root + '**/*.html'
    Functions
 ** ** ** ** ** */
 function styles() {
-    return src([source + 'scss/main.scss'])
-        .pipe(sourcemaps.init({loadMaps: true, largeFile: true}))
-        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-        .pipe(autoprefixer('last 2 versions'))
+    return src(config.scss.sourcePaths)
+        .pipe(sourcemaps.init(config.options.sourceMapOptions))
+        .pipe(sass(config.options.sassOptions.start).on('error', sass.logError))
+        .pipe(autoprefixer(config.options.prefixOptions))
         .pipe(cleanCss())
-        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(concat('main.min.css'))
+        .pipe(sass(config.options.sassOptions.end).on('error', sass.logError))
+        // .pipe(concat('main.min.css'))
+        .pipe(rename({ suffix: '.min' }))
         .pipe(sourcemaps.write('/.maps/'))
-        .pipe(dest(source + 'css'))
+        .pipe(dest(config.css.exportPath))
         .pipe(browserSync.stream());
 }
 
