@@ -40,16 +40,12 @@ urlpatterns = urlpatterns + [
 if settings.DEBUG:
     from django.conf.urls.static import static
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-    import debug_toolbar
 
     # Serve static and media files from development server
     urlpatterns += staticfiles_urlpatterns()
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
     urlpatterns = [
-        # Debug-toolbar
-        path('__debug__/', include(debug_toolbar.urls)),
-
         # Testing 404/500 page on development
         path('404/', default_views.page_not_found, kwargs={'exception': Exception("Page not Found")}),
         path('500/', default_views.server_error),
