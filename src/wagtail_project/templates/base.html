@@ -85,6 +85,7 @@
         {% block content %}{% endblock %}
 
         {# Global javascript #}
+        <script defer src="{% static 'js/bootstrap.min.js' %}"></script>
         <script defer src="{% static 'js/main.min.js' %}"></script>
         {% block extra_js %}{% endblock %}
     </body>
