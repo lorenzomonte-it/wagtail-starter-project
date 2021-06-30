@@ -1,6 +1,6 @@
 {% load wagtailimages_tags %}
 
-<figure class="block-image figure">
+<figure class="figure">
     <picture>
         {% image self.image original format-webp as image_original %}
         <source media="(min-width:1200px)" srcset="{{image_original.url}}">

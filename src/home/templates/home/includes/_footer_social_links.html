@@ -1,7 +1,7 @@
 {# Import social links from settings Dashboard #}
 
 <div>
-{% with social_link=settings.dashboard.WebsiteSettings %}
+{% with social_link=settings.dashboard.SocialLinks %}
     {% if social_link.facebook %}
         <a href="{{social_link.facebook}}">Facebook</a>
     {% endif %}

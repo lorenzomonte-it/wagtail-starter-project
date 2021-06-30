@@ -5,18 +5,18 @@ from wagtail.documents.blocks import DocumentChooserBlock
 from wagtail.embeds.blocks import EmbedBlock
 
 
-class LinkValue(blocks.StructValue):
-    '''Add logic for our links'''
+# class LinkValue(blocks.StructValue):
+#     '''Add logic for our links'''
 
-    def url(self):
-        internal_page = self.get('internal_page')
-        external_link = self.get('external_link')
+#     def url(self):
+#         internal_page = self.get('internal_page')
+#         external_link = self.get('external_link')
 
-        if internal_page:
-            return internal_page.url
-        if external_link:
-            return external_link
-        return '#'
+#         if internal_page:
+#             return internal_page.url
+#         if external_link:
+#             return external_link
+#         return '#'
 
 
 class TitleBlock(blocks.StructBlock):
@@ -66,22 +66,6 @@ class ImageBlock(blocks.StructBlock):
         label = 'Immagine'
 
 
-class GalleryBlock(blocks.StructBlock):
-    gallery = blocks.ListBlock(
-        blocks.StructBlock([
-            ('image', ImageChooserBlock(label="Immagine")),
-            ('title', blocks.CharBlock(label="Titolo", max_length=255, required=False)),
-            ('internal_page', blocks.PageChooserBlock(label="Pagina", required=False)),
-            ('external_link', blocks.URLBlock(label="Link esterno", required=False)),
-        ], value_class=LinkValue), label="Galleria Immagini"
-    )
-
-    class Meta:
-        template = 'blocks/block_gallery.html'
-        icon = 'image'
-        label = 'Galleria Immagini'
-
-
 class VideoBlock(blocks.StructBlock):
     video = DocumentChooserBlock(label="Video mp4", help_text="Inserisci un tuo video mp4")
 
@@ -98,16 +82,3 @@ class VideoEmbedBlock(blocks.StructBlock):
         template = 'blocks/block_video.html'
         icon = 'media'
         label = 'Video embed'
-
-
-class DocumentListBlock(blocks.StructBlock):
-    documents = blocks.ListBlock(
-        blocks.StructBlock([
-            ('file', DocumentChooserBlock(label="Documento")),
-        ]), label="Documenti"
-    )
-
-    class Meta:
-        template = 'blocks/block_document.html'
-        icon = 'doc-full'
-        label = 'Lista Documenti'

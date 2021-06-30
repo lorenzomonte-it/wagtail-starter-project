@@ -23,8 +23,8 @@
 
 
 {% block branding_login %}
-    {% if settings.dashboard.WebsiteSettings.logo %}
-        {% image settings.dashboard.WebsiteSettings.logo height-80 as logo %}
+    {% if settings.dashboard.Branding.logo %}
+        {% image settings.dashboard.Branding.logo height-80 as logo %}
         <img src="{{logo.url}}" alt="{{logo.alt}}">
     {% else %}
         {{block.super}}
