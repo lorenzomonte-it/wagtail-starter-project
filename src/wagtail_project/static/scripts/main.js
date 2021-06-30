@@ -1,12 +1,3 @@
-// import $ from 'jquery'; // "Import JQuery"
-import 'bootstrap/js/src/util'
+// import $ from 'jquery';
 
-
-/* PACKAGES IMPORT */
-
-
-/* COMPONENTS IMPORT */
-import './components/carousel'
-
-
-/* YOUR GENERAL CODE */
+/* IMPORTS */
