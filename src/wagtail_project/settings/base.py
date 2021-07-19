@@ -90,7 +90,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
-LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'wagtail_project/locale')]
 LANGUAGE_CODE = 'it'
 TIME_ZONE = 'Europe/Rome'
 USE_I18N = True
@@ -119,6 +119,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 
+# Default primary key field type
+# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
@@ -127,3 +129,4 @@ BASE_URL = 'http://example.com'
 WAGTAIL_SITE_NAME = "NOME CLIENTE"
 
 WAGTAIL_ALLOW_UNICODE_SLUGS = False
+WAGTAIL_MODERATION_ENABLED = False

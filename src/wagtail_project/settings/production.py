@@ -18,6 +18,12 @@ DATABASES = {
 }
 
 
+# Security settings
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_BROWSER_XSS_FILTER = True
+
 
 # Email settings
 # EMAIL_HOST = ''
@@ -25,5 +31,4 @@ DATABASES = {
 # EMAIL_PORT = 587
 # EMAIL_HOST_USER = ''
 # EMAIL_HOST_PASSWORD = ''
-
 # DEFAULT_FROM_EMAIL = 'NOME <email@email.com>'

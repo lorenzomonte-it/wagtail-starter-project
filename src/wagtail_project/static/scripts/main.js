@@ -1,3 +1,3 @@
 // import $ from 'jquery';
 
-/* IMPORTS */
+console.log('Get started!')

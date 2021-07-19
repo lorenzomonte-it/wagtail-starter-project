@@ -31,9 +31,6 @@
     "webpack-cli": "^4.3.1"
   },
   "dependencies": {
-    "@popperjs/core": "^2.9.0",
-    "bootstrap": "^4.5.3",
-    "jquery": "^3.5.1",
-    "swiper": "^6.4.11"
+    "bootstrap": "^5.0.2"
   }
 }

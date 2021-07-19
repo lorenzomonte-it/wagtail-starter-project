@@ -36,7 +36,6 @@ function styles() {
         .pipe(autoprefixer(config.options.prefixOptions))
         .pipe(cleanCss())
         .pipe(sass(config.options.sassOptions.end).on('error', sass.logError))
-        // .pipe(concat('main.min.css'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(sourcemaps.write('/.maps/'))
         .pipe(dest(config.css.exportPath))

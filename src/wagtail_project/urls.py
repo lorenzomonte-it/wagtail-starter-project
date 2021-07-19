@@ -26,7 +26,7 @@ urlpatterns = [
 urlpatterns = urlpatterns + [
     path('robots.txt', wagtail_project_views.RobotsView.as_view(), name='robots'),
     path('sitemap.xml', sitemap),
-    
+
     path("", include(wagtail_urls)),
 ]
 

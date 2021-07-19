@@ -1,5 +1,4 @@
 from .base import *
-from debug_toolbar.panels import request
 
 DEBUG = True
 
