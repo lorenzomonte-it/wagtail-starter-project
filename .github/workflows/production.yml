@@ -2,7 +2,7 @@ name: Deploy release on production!
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
