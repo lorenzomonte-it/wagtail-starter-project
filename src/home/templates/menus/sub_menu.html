@@ -1,7 +1,0 @@
-{% load menu_tags %}
-
-<div class="dropdown-menu" aria-labelledby="navbarDropdown{{item.id}}">
-    {% for item in sub_menu.items %}
-        <a class="dropdown-item {{item.active_class}}" href="{{item.href}}">{{ item.text }}</a>
-    {% endfor %}
-</div>

@@ -6,7 +6,7 @@ const config = require('./gulp.config')
 const autoprefixer = require('gulp-autoprefixer')
 const cleanCss = require('gulp-clean-css')
 const sourcemaps = require('gulp-sourcemaps')
-const sass = require('gulp-sass')
+const sass = require('gulp-sass')(require('sass'));
 var rename = require("gulp-rename");
 const browserSync = require('browser-sync')
 

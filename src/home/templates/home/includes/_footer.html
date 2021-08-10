@@ -3,6 +3,28 @@
     <div class="container">
         FOOTER
 
-        {% include 'home/includes/_footer_social_links.html' %}
+        <div>
+        {% with social_link=settings.dashboard.SocialLinks %}
+            {% if social_link.facebook %}
+                <a href="{{social_link.facebook}}">Facebook</a>
+            {% endif %}
+
+            {% if social_link.instagram %}
+                <a href="{{social_link.instagram}}">Instagram</a>
+            {% endif %}
+
+            {% if social_link.linkedin %}
+                <a href="{{social_link.linkedin}}">Linkedin</a>
+            {% endif %}
+
+            {% if social_link.twitter %}
+                <a href="{{social_link.twitter}}">Twitter</a>
+            {% endif %}
+
+            {% if social_link.youtube %}
+                <a href="{{social_link.youtube}}">YouTube</a>
+            {% endif %}
+        {% endwith %}
+        </div>
     </div>
 </footer>

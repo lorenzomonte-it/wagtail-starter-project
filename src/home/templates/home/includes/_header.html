@@ -1,4 +1,5 @@
-{% load static wagtailcore_tags wagtailimages_tags menu_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% wagtail_site as sito %}
 
 <header class="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,7 +18,37 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarMainMenu">
-                {% main_menu %}
+                <ul class="navbar-nav ms-auto">
+                    {% with menu=self.get_ancestors.1.get_children.live.in_menu|default:self.get_children.live.in_menu %}
+                    {% for item in menu %}
+                        {% with sub_menu=item.get_children.live.in_menu %}
+                        {% if sub_menu %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle {% if item.url in request.path %}active{% endif %}" href="#" id="navbarDropdown{{item.pk}}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{item.title}}
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{item.pk}}">
+                                    {% for sub_item in sub_menu %}
+                                        <li>
+                                            <a class="dropdown-item {% if sub_item.url in request.path %}active{% endif %}" href="{{sub_item.url}}">{{sub_item.title}}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if item.url in request.path %}active{% endif %}" href="{{item.url}}">{{item.title}}</a>
+                            </li>
+                        {% endif %}
+                        {% endwith %}
+                    {% endfor %}
+                    {% endwith %}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Extra Item</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

@@ -10,8 +10,6 @@ SECRET_KEY = '#x(c^ufomd&%#_oj05ypva1u7l0ifh@wbt9352o*3k@4zogk+j'
 INSTALLED_APPS = [
     'home',
     'search',
-
-    'stream_blocks',
     'dashboard',
 
     'wagtail.contrib.forms',
@@ -28,7 +26,6 @@ INSTALLED_APPS = [
     'wagtail.search',
     'wagtail.admin',
     'wagtail.core',
-    'wagtailmenus',
 
     'modelcluster',
     'taggit',
@@ -69,7 +66,6 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'wagtail.contrib.settings.context_processors.settings',
-                'wagtailmenus.context_processors.wagtailmenus',
             ],
         },
     },
