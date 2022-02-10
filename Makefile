@@ -1,12 +1,15 @@
-docker-build:
-	docker build -t wagtail_starter_project:latest ./src
+.DEFAULT_GOAL := help
+
+.PHONY: docker-build
+docker-build:  ## Create docker image
+	docker build -t {{cookiecutter.project_name}}:latest ./src
 
 docker-start:
 	cd ./src && docker-compose up --remove-orphans $(options)
 
 docker-stop:
 	cd ./src && docker-compose down --remove-orphans $(options)
-	docker rmi wagtail_starter_project:latest
+	docker rmi {{cookiecutter.project_name}}:latest
 
 docker-shell:
 	cd ./src && docker-compose run --rm $(options) website /bin/bash

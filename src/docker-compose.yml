@@ -5,7 +5,7 @@ x-service-volumes: &service-volumes
 
 services:
   website:
-    image: wagtail_starter_project:latest # Nome del progetto
+    image: {{cookiecutter.project_name}}:latest # Nome del progetto
     container_name: website
     command: python manage.py runserver 0.0.0.0:8000
     volumes: *service-volumes
@@ -24,7 +24,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - pg_wagtail_starter_project:/var/lib/postgresql/data/ # Modifica Nome
+      - pg_{{cookiecutter.project_name}}:/var/lib/postgresql/data/ # Modifica Nome
 
 volumes:
-  pg_wagtail_starter_project: # Modifica Nome
+  pg_{{cookiecutter.project_name}}: # Modifica Nome
