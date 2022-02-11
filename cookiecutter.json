@@ -1,3 +1,8 @@
 {
-    "project_name": "wagtail_starter_project"
+    "project_name": "wagtail_starter_project",
+    "_extensions": ["cookiecutter.extensions.SlugifyExtension"],
+    "_copy_without_render": [
+        "*.html",
+        "*.txt"
+    ]
 }

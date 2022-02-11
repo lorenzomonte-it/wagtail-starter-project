@@ -1,0 +1,20 @@
+/* ** ** ** ** **
+   BOOTSTRAP VARIABLES IMPORT
+** ** ** ** ** */
+// Fonts
+$font-family-sans-serif: 'Roboto', sans-serif;
+$enable-responsive-font-sizes: true;
+
+// Colors
+$body-color: #000;
+$primary: #235BAE;
+
+/* ** ** ** ** **
+   BOOTSTRAP CORE IMPORT
+** ** ** ** ** */
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
+
+
+/* ** ** ** ** **
+   HELPERS/COMPONENTS/PAGES IMPORT
+** ** ** ** ** */
