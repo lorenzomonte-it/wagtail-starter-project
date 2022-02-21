@@ -1,17 +1,13 @@
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-from configurations import values
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
-
-SECRET_KEY = '#x(c^ufomd&%#_oj05ypva1u7l0ifh@wbt9352o*3k@4zogk+j'
 
 # Application definition
 INSTALLED_APPS = [
     'home',
     'search',
-    'dashboard',
 
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -121,6 +117,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 # Wagtail settings
 BASE_URL = 'http://example.com'
 WAGTAIL_SITE_NAME = "NOME CLIENTE"
-
 WAGTAIL_ALLOW_UNICODE_SLUGS = False
 WAGTAIL_MODERATION_ENABLED = False

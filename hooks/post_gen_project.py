@@ -12,7 +12,7 @@ class MainProcess:
 
     GITHUB_TOKEN = "GITHUB_PRIVATE_TOKEN"
     GITHUB_URL = "https://api.github.com/user/repos"
-    GITHUB_REPO_NAME = '{{cookiecutter.project_name}}'
+    GITHUB_REPO_NAME = '{{cookiecutter.project_slug}}'
     GITHUB_CLONE_URL = ''
 
     def __init__(self, *args, **kwargs):
@@ -43,8 +43,8 @@ class MainProcess:
         print(f"\nCleaning completed!")
 
 
-if __name__ == "__main__":
-    main_process = MainProcess()
-    main_process.create_remote_repository()
-    main_process.init_local_repository()
-    main_process.clean_files()
+# if __name__ == "__main__":
+#     main_process = MainProcess()
+#     main_process.create_remote_repository()
+#     main_process.init_local_repository()
+#     main_process.clean_files()

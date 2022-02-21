@@ -17,6 +17,7 @@ RUN apt-get update && \
     postgresql-contrib
 
 COPY requirements.txt ./requirements.txt
+RUN pip install --upgrade pip
 RUN pip install -r ./requirements.txt
 COPY . .
 

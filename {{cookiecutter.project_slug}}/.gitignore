@@ -127,9 +127,14 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Custom
+# Custom general
 node_modules
 package-lock.json
 
+# Custom settings
+src/wagtail_project/settings/production.py
+
+# Custom staticfiles
 src/static/
 src/media/
+
