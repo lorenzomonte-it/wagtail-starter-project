@@ -1,6 +1,7 @@
 {
     "project_name": null,
     "project_slug": "{{ cookiecutter.project_name | slugify(separator='') }}",
+    "python_version": "3.9",
     "_extensions": ["cookiecutter.extensions.SlugifyExtension"],
     "_copy_without_render": [
         "*.html",

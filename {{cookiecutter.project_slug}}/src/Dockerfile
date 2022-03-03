@@ -1,4 +1,4 @@
-FROM python:3.7-slim
+FROM python:{{cookiecutter.python_version}}-slim
 
 ENV PYTHONUNBUFFERED=1
 WORKDIR /app/
