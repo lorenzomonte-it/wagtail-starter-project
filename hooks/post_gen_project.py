@@ -39,7 +39,7 @@ class MainProcess:
         print(f"\nRepository is initialized and create first commit!")
 
     def clean_files(self, *args, **kwargs):
-        os.system(f"./scripts/clean_files.sh")
+        os.system(f"./scripts/system_clean_files.sh")
         print(f"\nCleaning completed!")
 
 

@@ -132,9 +132,9 @@ node_modules
 package-lock.json
 
 # Custom settings
-src/wagtail_project/settings/production.py
+./src/wagtail_project/settings/production.py
 
 # Custom staticfiles
-src/static/
-src/media/
+./src/static/
+./src/media/
 
